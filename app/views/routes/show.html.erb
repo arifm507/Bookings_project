@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number of seats:</strong>
+  <%= @route.number_of_seats %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @route.origin %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @route.destination %>
+</p>
+
+<p>
+  <strong>Departure time:</strong>
+  <%= @route.departure_time %>
+</p>
+
+<p>
+  <strong>Arrival time:</strong>
+  <%= @route.arrival_time %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @route.duration %>
+</p>
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Back', routes_path %>

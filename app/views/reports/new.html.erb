@@ -1,0 +1,78 @@
+<head>
+	<link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+<style type="text/css">
+	body{
+		background: #e2e2e2;
+		font-family: 'ZCOOL XiaoWei', serif;
+	}
+</style>
+</head>
+<body>
+<div class="signup-form">
+    	<%= form_with(url: report_path, method: :get, remote: true) do |form| %>
+		<div class="form-header">
+			<h2>Booking Reports</h2>
+			
+		</div>
+
+		<div class="form-group">
+			<label>From Date</label>
+            <div class='input-group date' id='datetimepicker6'>            	
+                <%= form.text_field :from_date, class: 'form-control', data: { date_format: 'YYYY-MM-DD' } %>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+        	<label>To Date</label>
+            <div class='input-group date' id='datetimepicker7'>
+            	<%= form.text_field :to_date, class: 'form-control', data: { date_format: 'YYYY-MM-DD'} %>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="radio radio-info">
+	
+			<%= form.radio_button :date_type, 'issue_date', :checked => true  %><label>Issue Date</label>
+			
+			
+        </div>
+		<div class="radio radio-info">
+			<%= form.radio_button :date_type, 'travel_date' %><label>Travel Date</label>	
+        </div>
+        
+		<div class="form-group">
+			<%= form.submit "Run Reports", class: 'btn btn-primary btn-block btn-lg' %>
+		</div>	
+		<% end %>
+	</div>
+
+
+
+	<div id="fetch_report"> </div>
+	<script>
+	   $(function(){
+	     $('.pagination a').attr('data-remote', 'true')
+	   });
+
+    $(function () {
+        $('#datetimepicker6').datetimepicker();
+        $('#datetimepicker7').datetimepicker({
+            useCurrent: false 
+        });
+        $("#datetimepicker6").on("dp.change", function (e) {
+            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
+        });
+        $("#datetimepicker7").on("dp.change", function (e) {
+            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+        });
+    });
+</script>
+	
+</body>
+

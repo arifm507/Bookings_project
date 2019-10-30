@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Travel date:</strong>
+  <%= @reservation.travel_date %>
+</p>
+
+<p>
+  <strong>Number of seats:</strong>
+  <%= @reservation.number_of_seats %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @reservation.origin %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @reservation.destination %>
+</p>
+
+<p>
+  <strong>Departure time:</strong>
+  <%= @reservation.departure_time %>
+</p>
+
+<p>
+  <strong>Arrival time:</strong>
+  <%= @reservation.arrival_time %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @reservation.duration %>
+</p>
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> |
+<%= link_to 'Back', reservations_path %>

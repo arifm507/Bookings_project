@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  route_name: MyString
+  service_number: MyString
+  origin: MyString
+  destination: MyString
+
+two:
+  route_name: MyString
+  service_number: MyString
+  origin: MyString
+  destination: MyString

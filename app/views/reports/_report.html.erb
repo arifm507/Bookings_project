@@ -1,0 +1,55 @@
+<div class="container">
+  
+<table class="table table-striped" border="1 px">
+  <thead>
+    <tr style="color: white" class="t_header">
+      <th>S.No.</th>
+      <th>PNR NUMBER</th>
+      <th>SEAT NUMBERS</th>
+      <th>NAME</th>
+      <th>EMAIL</th>
+      <th>AGE</th>      
+      <th>TRAVEL DATE</th>
+      <th>ISSUE DATE</th>
+      <th>BASE FARE</th>
+      <th>GST%</th>
+      <th>Total Amount</th>
+      <th style="color: red ">CANCELLED TICKETS</th>
+      <th style="color: red">CANCELATION AMOUNT</th>
+      <th style="color: red">REFUND AMOUNT</th>
+      <th>Net Fare</th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @bookings.each_with_index do |booking,index| %>
+      <tr>
+        <td><%= index+1 %></td>
+      	<td><%= booking.pnr_number %></td>
+      	<td><%= booking.seat_number %></td>      	
+        <td><%= booking.passenger_name %></td>
+        <td><%= booking.email %></td>
+        <td><%= booking.age %></td>
+        <td><%= booking.travel_date %></td>
+        <td><%= booking.issue_date %></td>
+        <td><%= booking.base_fare %></td>
+        <td><%= booking.gst %></td>
+        <td><%= booking.total_amount.ceil(2) %></td>
+        <td><%= booking.cancelled_seat %></td>
+        <td><%= booking.cancelled_fare.ceil(2) %></td>
+        <td><%= booking.refund_amount.ceil(2) %></td>
+        <td><%= booking.net_fare.ceil(2) %></td>
+
+       </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= will_paginate @bookings, renderer: BootstrapPagination::Rails %>
+</div>
+
+
+<div>
+    
+</div>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pnr: MyString
+  total_fare: 1.5
+  passenger_name: MyString
+  email: MyString
+  origin: MyString
+  destination: MyString
+  Passenger_age: 1
+  travel_date: 2019-10-22
+  booked_by: 1
+  route_no: 1
+  issue_date: 2019-10-22
+  is_cancelled: false
+
+two:
+  pnr: MyString
+  total_fare: 1.5
+  passenger_name: MyString
+  email: MyString
+  origin: MyString
+  destination: MyString
+  Passenger_age: 1
+  travel_date: 2019-10-22
+  booked_by: 1
+  route_no: 1
+  issue_date: 2019-10-22
+  is_cancelled: false

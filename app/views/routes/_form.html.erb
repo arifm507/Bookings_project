@@ -1,0 +1,72 @@
+
+<%= form_with(model: route, local: true, class: 'form-horizontal') do |form| %>
+<% if flash.any? %>
+  <% flash.each do |error,message| %>
+  <blockquote style="background-color: #f25050">
+  <p><%= message %></p>
+  </blockquote>
+
+  
+  <% end %>
+<% end %>
+
+
+  <div class="form-group">
+    <%= form.label 'Service Number:', class: "col-sm-2 control-label" %>
+    <div class="col-sm-8">
+      <%= form.text_field :service_number, class: "form-control", placeholder: 'Service Number' %>
+    </div>    
+    <span class="error" style = "font-size: 13px; line-height: 3">e.g. TS001,TS002. </span>
+  </div>
+  <div class="form-group">
+    <%= form.label 'Number Of Seats:', class: "col-sm-2 control-label" %>
+    <div class="col-sm-8">
+      <%= form.number_field :number_of_seats, class: "form-control", placeholder: 'Number Of Seats' %>
+    </div>    
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Origin:', class: "col-sm-2 control-label" %>
+    <div class="col-sm-8">
+      <%= form.collection_select(:origin, City.order(:city_name), :city_name, :city_name, {prompt: true}, {class: 'form-control col-md-10', required: "required"})%>
+    </div>    
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Destination:', class: "col-sm-2 control-label" %>
+    <div class="col-sm-8">
+      <%= form.collection_select(:destination, City.order(:city_name), :city_name, :city_name, {prompt: true}, {class: 'form-control col-md-10', required: "required"})%>
+    </div>    
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Departure Time:', class: "col-sm-2 control-label" %>
+    <div class="col-sm-8">
+      <%= form.time_select :departure_time, class: "form-control", placeholder: 'Departure Time' %>
+    </div>    
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Arrival Time:', class: "col-sm-2 control-label" %>
+    <div class="col-sm-8">
+      <%= form.time_select :arrival_time, class: "form-control", placeholder: 'Arrival Time' %>
+    </div>    
+  </div>
+
+  <div class="form-group">
+    <%= form.label 'Duration:', class: "col-sm-2 control-label" %>
+    <div class="col-sm-8">
+      <%= form.text_field :duration, class: "form-control", placeholder: 'Duration' %>
+    </div>    
+  </div>
+
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= form.submit class: 'btn btn-success' %>
+    </div>
+  </div>
+
+  
+
+<% end %>

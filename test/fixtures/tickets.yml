@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  seat_number: MyString
+  pnr_number: MyString
+  passenger_name: MyString
+  total_fare: 1.5
+  gst: 1.5
+  cancelled_fare: 1.5
+  is_cancelled: false
+
+two:
+  seat_number: MyString
+  pnr_number: MyString
+  passenger_name: MyString
+  total_fare: 1.5
+  gst: 1.5
+  cancelled_fare: 1.5
+  is_cancelled: false
